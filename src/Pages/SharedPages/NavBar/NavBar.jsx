@@ -17,7 +17,7 @@ const NavBar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 space-y-2 p-2 shadow bg-base-100 rounded-box w-52">
-                            <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>Home</li></Link>
+                            <Link to={'/'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>Home</li></Link>
                             <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>All Toys</li></Link>
                             <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>Add A Toy</li></Link>
                             <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>My Toys</li></Link>
@@ -31,11 +31,11 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal space-x-7 px-1 font-bold text-lg">
-                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>Home</li></Link>
-                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>All Toys</li></Link>
-                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>Add A Toy</li></Link>
-                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>My Toys</li></Link>
-                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500'><li>Blog</li></Link>
+                        <Link to={'/'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Home</li></Link>
+                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>All Toys</li></Link>
+                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Add A Toy</li></Link>
+                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>My Toys</li></Link>
+                        <Link to={'/das'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Blog</li></Link>
                     </ul>
                 </div>
                 <div className="navbar-end">
