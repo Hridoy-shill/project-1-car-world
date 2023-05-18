@@ -36,6 +36,7 @@ const LoginPage = () => {
         googleSingUp()
         .then(result =>{
             const newUserByGoogle = result.user;
+            navigate(from, {replace: true})
             console.log(newUserByGoogle);
         })
         .catch(error =>{
