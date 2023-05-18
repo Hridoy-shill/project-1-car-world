@@ -5,8 +5,16 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 
 const NavBar = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, logOutUser } = useContext(AuthContext)
     console.log(user);
+
+    const handleLogOut = () => {
+        logOutUser()
+            .then()
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     return (
         <div>
@@ -32,18 +40,19 @@ const NavBar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal space-x-7 px-1 font-bold text-lg">
                         <Link to={'/'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Home</li></Link>
-                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>All Toys</li></Link>
-                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Add A Toy</li></Link>
-                        <Link className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>My Toys</li></Link>
-                        <Link to={'/das'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Blog</li></Link>
+                        <Link to={'/allToys'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>All Toys</li></Link>
+                        <Link to={'/addToys'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Add A Toy</li></Link>
+                        <Link to={'/myToys'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>My Toys</li></Link>
+                        <Link to={'/blog'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Blog</li></Link>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <img className='w-11 h-11 rounded-full lg:me-5 me-1' src="https://i.ibb.co/jHVc8xf/cars-logo.jpg" alt="" title={user.name} />
-
                     {user ?
-                        <a className="btn">LogOut</a> :
-                        <a className="btn">LogIn</a>
+                        <div className='flex'>
+                            <img className='w-11 h-11 rounded-full lg:me-5 me-1' src={user.photoURL} alt="" title={user.displayName} />
+                            <button onClick={handleLogOut} className='btn'>LogOut</button>
+                        </div> :
+                        <Link to={'/login'}><button className='btn'>LogIn</button></Link>
                     }
                 </div>
             </div>
