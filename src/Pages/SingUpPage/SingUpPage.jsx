@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
 const SingUpPage = () => {
 
     const [error, setError] = useState('')
-
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
    
 
     const handleSingUpData = (event) => {
@@ -31,6 +31,7 @@ const SingUpPage = () => {
 
             console.log(createdUser);
             form.reset();
+            navigate('/login')
         })
         .catch(error =>{
             setError(error.message);
