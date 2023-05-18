@@ -1,9 +1,10 @@
 import React from 'react';
+import banner from '../../../assets/banner.jpg'
 
 const Headers = () => {
     return (
         <div>
-            <h3>this is header</h3>
+            <img src={banner} alt="" />
         </div>
     );
 };
