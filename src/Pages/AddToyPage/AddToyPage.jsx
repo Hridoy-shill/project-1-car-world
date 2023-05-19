@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const AddToyPage = () => {
 
@@ -10,9 +10,22 @@ const AddToyPage = () => {
         const Price = form.price.value;
         const Quantity = form.quantity.value;
         const seller = form.sellerId.value;
-        console.log(ToyName, Category, Price, Quantity, seller);
-    }
+        const toyImg = form.toyImg.value;
 
+        const toyData = {ToyName, Category, Price, Quantity, seller, toyImg}
+        console.log(toyData);
+
+
+        fetch('http://localhost:5000/addToy',{
+            method:'POST',
+            headers:{
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(toyData)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
 
     return (
         <div>
@@ -50,6 +63,12 @@ const AddToyPage = () => {
                 </div>
 
                 <div className='flex flex-col mt-3 w-full'>
+                    <label className='font-bold text-xl' htmlFor="seller">Toy URL:</label>
+                    <input className='w-full border-2 p-3 rounded border-gray-600 mt-2' type="text" name="toyImg" id="" placeholder='URL' required />
+                </div>
+
+
+                <div className='flex flex-col mt-3 w-full'>
                     <label className='font-bold text-xl' htmlFor="seller">Seller ID:</label>
                     <input className='w-full border-2 p-3 rounded border-gray-600 mt-2' type="email" name="sellerId" id="" placeholder='Enter your Id' required />
                 </div>
@@ -61,7 +80,7 @@ const AddToyPage = () => {
                 <div>
                     <button className='btn w-full mt-6'>Add Toy</button>
                 </div>
-
+                
             </form>
         </div>
     );

@@ -12,41 +12,42 @@ import MyToysPage from "../Pages/MyToysPage/MyToysPage";
 
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainLayOut></MainLayOut>,
-      errorElement:<ErrorPage></ErrorPage>,
-      children:[
-        {
-            path:'/',
-            element:<Home></Home>
-        },
-        {
-          path:'/allToys',
-          element:<AllToysPage></AllToysPage>
-        },
-        {
-          path:'/addToys',
-          element:<PrivateRoute><AddToyPage></AddToyPage></PrivateRoute>
-        },
-        {
-          path:'/myToys',
-          element:<PrivateRoute><MyToysPage></MyToysPage></PrivateRoute>
-        },
-        {
-          path:'/blog',
-          element:<PrivateRoute><BlogPage></BlogPage></PrivateRoute>
-        },
-        {
-          path:'/login',
-          element:<LoginPage></LoginPage>
-        },
-        {
-          path:'/singUp',
-          element:<SingUpPage></SingUpPage>
-        }
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <MainLayOut></MainLayOut>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: '/allToys',
+        element: <AllToysPage></AllToysPage>,
+        loader: () => fetch('http://localhost:5000/allToy')
+      },
+      {
+        path: '/addToys',
+        element: <PrivateRoute><AddToyPage></AddToyPage></PrivateRoute>
+      },
+      {
+        path: '/myToys',
+        element: <PrivateRoute><MyToysPage></MyToysPage></PrivateRoute>
+      },
+      {
+        path: '/blog',
+        element: <PrivateRoute><BlogPage></BlogPage></PrivateRoute>
+      },
+      {
+        path: '/login',
+        element: <LoginPage></LoginPage>
+      },
+      {
+        path: '/singUp',
+        element: <SingUpPage></SingUpPage>
+      }
+    ]
+  },
+]);
 
 export default router;
