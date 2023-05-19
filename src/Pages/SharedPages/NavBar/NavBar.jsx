@@ -41,8 +41,10 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal space-x-7 px-1 font-bold text-lg">
                         <Link to={'/'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Home</li></Link>
                         <Link to={'/allToys'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>All Toys</li></Link>
+                        
                         <Link to={'/addToys'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Add A Toy</li></Link>
                         <Link to={'/myToys'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>My Toys</li></Link>
+
                         <Link to={'/blog'} className='hover:bg-slate-600 hover:text-white hover:p-2 hover:rounded-lg duration-500 hover:underline'><li>Blog</li></Link>
                     </ul>
                 </div>

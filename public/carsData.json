@@ -1,0 +1,86 @@
+[
+    {
+      "category_id": 0,
+      "car_img": "https://i.ibb.co/mShxFBg/car2.jpg",
+      "car_name": "Alfa Romeo",
+      "price": "50",
+      "ratting": 5
+    },
+    {
+      "category_id": 0,
+      "car_img": "https://i.ibb.co/fNWgRn5/car3.webp",
+      "car_name": "Chevrolet",
+      "price": "55",
+      "ratting": 5
+    },
+    {
+      "category_id": 0,
+      "car_img": "https://i.ibb.co/10RYGG2/car4.jpg",
+      "car_name": "Ford",
+      "price": "78",
+      "ratting": 4.3
+    },
+    {
+      "category_id": 0,
+      "car_img": "https://i.ibb.co/JsHd0Hr/car1.jpg",
+      "car_name": "Lamborghini",
+      "price": "100",
+      "ratting": 4.8
+    },
+    {
+      "category_id": 1,
+      "car_img": "https://i.ibb.co/pzSJ5Hk/monster-truck2.jpg",
+      "car_name": "Mohawk Warrior",
+      "price": "70",
+      "ratting": 4.3
+    },
+    {
+      "category_id": 1,
+      "car_img": "https://i.ibb.co/CPys3k0/Monster-truck3.jpg",
+      "car_name": "Monster Mutt",
+      "price": "90",
+      "ratting": 4.2
+    },
+    {
+      "category_id": 1,
+      "car_img": "https://i.ibb.co/qBf2sQV/Monster-truck4.webp",
+      "car_name": "El Toro Loco",
+      "price": "120",
+      "ratting": 4.8
+    },
+    {
+      "category_id": 1,
+      "car_img": "https://i.ibb.co/Gk1xjx3/Monster-Truck1.webp",
+      "car_name": "Grave Digger",
+      "price": "120",
+      "ratting": 5
+    },
+    {
+      "category_id": 2,
+      "car_img": "https://i.ibb.co/rttvQFR/track2.jpg",
+      "car_name": "Bandito",
+      "price": "55",
+      "ratting": 4.0
+    },
+    {
+      "category_id": 2,
+      "car_img": "https://i.ibb.co/vVD428B/track3.webp",
+      "car_name": "Rambo",
+      "price": "65",
+      "ratting": 4.5
+    },
+    {
+      "category_id": 2,
+      "car_img": "https://i.ibb.co/njjdwYx/track4.jpg",
+      "car_name": "El Grande",
+      "price": "80",
+      "ratting": 4.3
+    },
+    {
+      "category_id": 2,
+      "car_img": "https://i.ibb.co/gtXNytF/track1.jpg",
+      "car_name": "The Roadrunner",
+      "price": "95",
+      "ratting": 4.5
+    }
+  ]
