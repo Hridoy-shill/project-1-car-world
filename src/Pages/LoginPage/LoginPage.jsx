@@ -10,7 +10,7 @@ const LoginPage = () => {
     const { logInUser, googleSingUp } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation()
-    console.log(location);
+    // console.log(location);
     const from = location.state?.from?.pathname || '/'
 
     const handleLogInData = (event) => {
@@ -18,7 +18,7 @@ const LoginPage = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         logInUser(email, password)
             .then(result => {

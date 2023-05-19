@@ -8,9 +8,9 @@ import Truck from './Truck/Truck';
 const CategoriesTab = () => {
 
     const [allCars, setAllCars] = useState([])
-    console.log(allCars);
+    // console.log(allCars);
     const [carCategory, setCarCategory] = useState('')
-    console.log(carCategory);
+    // console.log(carCategory);
 
     useEffect(() => {
         fetch('http://localhost:5000/allCars')
@@ -19,7 +19,7 @@ const CategoriesTab = () => {
     }, [])
 
     const categoryCar = allCars?.filter(car => car.category_id == carCategory)
-    console.log(categoryCar);
+    // console.log(categoryCar);
 
     return (
         <Tabs defaultIndex={0} onSelect={(index) => setCarCategory(index)}>

@@ -15,7 +15,7 @@ const Truck = ({ car }) => {
                         <p className='font-semibold text-lg'>ratting:{ratting}</p>
                     </div>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary w-full">View details</button>
+                        <button className="btn w-full">View details</button>
                     </div>
                 </div>
             </div>
