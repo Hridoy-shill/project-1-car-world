@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../../Provider/AuthProvider';
 
 const SportCar = ({ car }) => {
 
     const { _id, category_id, car_img, car_name, price, ratting } = car;
-
+    
+    const {user} = useContext(AuthContext);
+    // console.log(user);
 
     const handleCarDetails = (id) =>{
-        console.log(id);
-
+        if(user){
+            console.log(id);
+        }
+        else{
+            alert("plz log in fist")
+        }
     }
 
     return (
