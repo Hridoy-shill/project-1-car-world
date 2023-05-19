@@ -4,6 +4,9 @@ const SingleToy = ({ toy }) => {
 
     const {_id, Category, Price, Quantity, ToyName, seller, toyImg} = toy
 
+    const handleToyDetails =(id)=>{
+        console.log(id);
+    }
     return (
         <div>
             <div className="card w-fit bg-base-100 shadow-xl border-2 border-gray-100 p-2">
@@ -17,7 +20,7 @@ const SingleToy = ({ toy }) => {
                         <p className='font-semibold text-lg w-fit'><span className='font-bold text-gray-500 text-lg me-2'>Seller</span>: {seller}</p>
                     </div>
                     <div className="card-actions justify-end">
-                        <button className="btn w-full">View details</button>
+                        <button onClick={()=>handleToyDetails(_id)} className="btn w-full">View details</button>
                     </div>
                 </div>
             </div>

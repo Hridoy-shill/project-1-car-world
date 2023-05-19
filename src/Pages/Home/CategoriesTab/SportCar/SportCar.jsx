@@ -4,6 +4,12 @@ const SportCar = ({ car }) => {
 
     const { _id, category_id, car_img, car_name, price, ratting } = car;
 
+
+    const handleCarDetails = (id) =>{
+        console.log(id);
+
+    }
+
     return (
         <div className="card w-fit bg-base-100 shadow-xl border-2 border-gray-100">
             <figure><img src={car_img} alt="Shoes" /></figure>
@@ -14,7 +20,7 @@ const SportCar = ({ car }) => {
                     <p className='font-semibold text-lg'>ratting:{ratting}</p>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn w-full">View details</button>
+                    <button onClick={()=>handleCarDetails(_id)} className="btn w-full">View details</button>
                 </div>
             </div>
         </div>
