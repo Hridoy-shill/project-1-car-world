@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const AddToyPage = () => {
 
-    const handleAddToyData = (event) =>{
+    const {user} = useContext(AuthContext);
+    const {displayName, email} = user;
+
+    const handleAddToyData = (event) => {
         event.preventDefault()
         const form = event.target;
         const ToyName = form.toyName.value;
@@ -10,30 +14,46 @@ const AddToyPage = () => {
         const Price = form.price.value;
         const Quantity = form.quantity.value;
         const seller = form.sellerId.value;
+        const sellerName = form.sellerName.value;
+        const ratting = form.ratting.value;
+        const description = form.description.value;
         const toyImg = form.toyImg.value;
+    
 
-        const toyData = {ToyName, Category, Price, Quantity, seller, toyImg}
+        const toyData = { ToyName, Category, Price, Quantity, seller, toyImg, sellerName, ratting, description}
         console.log(toyData);
 
 
-        fetch('http://localhost:5000/addToy',{
-            method:'POST',
-            headers:{
-                'content-type' : 'application/json'
+        fetch('http://localhost:5000/addToy', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(toyData)
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
+            .then(res => res.json())
+            .then(data => console.log(data))
+            form.reset()
     }
 
     return (
         <div>
             <h1 className='font-bold text-3xl border-b-2 border-black p-3 w-fit mx-auto mb-5'>Add Toy</h1>
 
-            <form onSubmit={handleAddToyData} className='w-1/2 p-8 mx-auto border-2 border-gray-300 rounded-md bg-slate-200 my-10 shadow-lg'>
+            <form onSubmit={handleAddToyData} className='w-full p-5 mx-auto border-2 border-gray-300 rounded-md bg-slate-200 my-10 shadow-lg'>
 
                 <div className='flex justify-evenly items-center gap-2'>
+                    <div className='flex flex-col mt-3 w-full'>
+                        <label className='font-bold text-xl' htmlFor="seller">Seller Name:</label>
+                        <input className='w-full border-2 p-3 rounded border-gray-600 mt-2' type="text" name="sellerName" id="" placeholder='Enter your Name' defaultValue={displayName} required />
+                    </div>
+                    <div className='flex flex-col mt-3 w-full'>
+                        <label className='font-bold text-xl' htmlFor="seller">Seller ID:</label>
+                        <input className='w-full border-2 p-3 rounded border-gray-600 mt-2' type="email" name="sellerId" id="" placeholder='Enter your Id' defaultValue={email} required />
+                    </div>
+                </div>
+
+                <div className='flex justify-evenly items-center gap-2 mt-3'>
 
                     <div className='flex flex-col w-full'>
                         <label className='font-bold text-xl' htmlFor="toyName">Toy Name:</label>
@@ -62,25 +82,27 @@ const AddToyPage = () => {
                     </div>
                 </div>
 
-                <div className='flex flex-col mt-3 w-full'>
-                    <label className='font-bold text-xl' htmlFor="seller">Toy URL:</label>
-                    <input className='w-full border-2 p-3 rounded border-gray-600 mt-2' type="text" name="toyImg" id="" placeholder='URL' required />
+                <div className='flex justify-evenly items-center gap-2 mt-3'>
+                    <div className='flex flex-col mt-3 w-full'>
+                        <label className='font-bold text-xl' htmlFor="seller">Toy URL:</label>
+                        <input className='w-full border-2 p-3 rounded border-gray-600 mt-2' type="text" name="toyImg" id="" placeholder='URL' required />
+                    </div>
+
+                    <div className='flex flex-col mt-3 w-full'>
+                        <label className='font-bold text-xl' htmlFor="ratting">Ratting:</label>
+                        <input className='w-full border-2 p-3 rounded border-gray-600 mt-2' type="number" name="ratting" id="" placeholder='Ratting' required />
+                    </div>
                 </div>
 
-
-                <div className='flex flex-col mt-3 w-full'>
-                    <label className='font-bold text-xl' htmlFor="seller">Seller ID:</label>
-                    <input className='w-full border-2 p-3 rounded border-gray-600 mt-2' type="email" name="sellerId" id="" placeholder='Enter your Id' required />
-                </div>
-
-                <div>
-                    <p className='text-red-600 font-bold text-base mt-3'></p>
+                <div className='mt-3'>
+                    <label className='font-bold text-xl' htmlFor="description">Description:</label>
+                    <textarea className='border-2 border-black rounded mt-3 p-4 w-full' name="description" id="" rows="5" placeholder='Description'></textarea>
                 </div>
 
                 <div>
                     <button className='btn w-full mt-6'>Add Toy</button>
                 </div>
-                
+
             </form>
         </div>
     );

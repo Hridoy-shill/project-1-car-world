@@ -17,7 +17,6 @@ const AllToysPage = () => {
                             <th className=' text-base font-bold'>Price</th>
                             <th className=' text-base font-bold'>Available Quantity</th>
                             <th className=' text-base font-bold'>SellerID</th>
-                            <th className=' text-base font-bold'>Update</th>
                             <th className=' text-base font-bold'>Details</th>
                         </tr>
                     </thead>

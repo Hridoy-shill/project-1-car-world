@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../../../Provider/AuthProvider';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const SportCar = ({ car }) => {
 
@@ -8,14 +9,7 @@ const SportCar = ({ car }) => {
     const {user} = useContext(AuthContext);
     // console.log(user);
 
-    const handleCarDetails = (id) =>{
-        if(user){
-            console.log(id);
-        }
-        else{
-            alert("plz log in fist")
-        }
-    }
+    
 
     return (
         <div className="card w-fit bg-base-100 shadow-xl border-2 border-gray-100">
@@ -27,7 +21,7 @@ const SportCar = ({ car }) => {
                     <p className='font-semibold text-lg'>ratting:{ratting}</p>
                 </div>
                 <div className="card-actions justify-end">
-                    <button onClick={()=>handleCarDetails(_id)} className="btn w-full">View details</button>
+                   <Link to={`/carDetails/${_id}`}><button className="btn w-full">View details</button></Link>
                 </div>
             </div>
         </div>

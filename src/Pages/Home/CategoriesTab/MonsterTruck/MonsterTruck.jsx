@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MonsterTruck = ({ car }) => {
 
@@ -15,7 +16,7 @@ const MonsterTruck = ({ car }) => {
                         <p className='font-semibold text-lg'>ratting:{ratting}</p>
                     </div>
                     <div className="card-actions justify-end">
-                        <button className="btn w-full">View details</button>
+                        <Link to={`/carDetails/${_id}`}><button className="btn w-full">View details</button></Link>
                     </div>
                 </div>
             </div>
