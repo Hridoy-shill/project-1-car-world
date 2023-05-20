@@ -15,7 +15,10 @@ const Details = () => {
                         <img src={toyImg} className="rounded-lg shadow-2xl" />
                     </div>
                     <div className='w-full'>
-                        <h1 className="text-5xl font-bold mb-14 border-b-2 w-fit border-black">{ToyName}</h1>
+                        <div className='mb-10'>
+                            <h1 className="text-5xl font-bold mb-5 border-b-2 w-fit border-black">{ToyName}</h1>
+                            <p className="text-base font-bold text-slate-500 border-black">{description}</p>
+                        </div>
                         <p className='font-semibold text-lg my-4'><span className='font-bold text-xl me-1'>Seller:</span> {sellerName}</p>
                         <p className='font-semibold text-lg my-4'><span className='font-bold text-xl me-1'>Seller Email:</span> {seller}</p>
                         <p className='font-semibold text-lg my-4'><span className='font-bold text-xl me-1'>Price:</span> {Price} $</p>
