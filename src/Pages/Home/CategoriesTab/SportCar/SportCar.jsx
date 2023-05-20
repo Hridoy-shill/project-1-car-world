@@ -9,6 +9,14 @@ const SportCar = ({ car }) => {
     const {user} = useContext(AuthContext);
     console.log(user);
 
+    const handleUserExist = () =>{
+        if(user){
+            <></>
+        }
+        else{
+            alert('log in first')
+        }
+    }
     
 
     return (
@@ -21,7 +29,7 @@ const SportCar = ({ car }) => {
                     <p className='font-semibold text-lg'>ratting:{ratting}</p>
                 </div>
                 <div className="card-actions justify-end">
-                   <Link to={`/carDetails/${_id}`}><button className="btn w-full">View details</button></Link>
+                   <Link to={`/carDetails/${_id}`}><button onClick={handleUserExist} className="btn w-full">View details</button></Link>
                 </div>
             </div>
         </div>
