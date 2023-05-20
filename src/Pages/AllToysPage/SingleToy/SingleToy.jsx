@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import { Link, Navigate, useLocation } from 'react-router-dom';
 
 const SingleToy = ({ toy }) => {
 
-    const {_id, Category, Price, Quantity, ToyName, seller, toyImg} = toy
+    const { user } = useContext(AuthContext)
+    const location = useLocation();
+    console.log(location);
 
-    const handleToyDetails =(id)=>{
-        console.log(id);
+
+    const { _id, Category, Price, Quantity, ToyName, seller, toyImg } = toy || {};
+
+    const handleToyDetails = (id) => {
+        if (user) {
+            console.log(id);
+        }
+        else {
+           
+        }
     }
     return (
-        <div>
-            <div className="card w-fit bg-base-100 shadow-xl border-2 border-gray-100 p-2">
-                <figure><img src={toyImg} alt="Shoes" /></figure>
-                <div className="card-body">
-                    <p className="font-bold text-2xl">{ToyName}</p>
-                    <div className='my-2'>
-                        <p className='font-semibold text-lg'><span className='font-bold text-gray-500 text-lg me-2'>Price:</span> {Price}$</p>
-                        <p className='font-semibold text-lg'><span className='font-bold text-gray-500 text-lg me-2'>Quantity</span>: {Quantity}pice</p>
-                        <p className='font-semibold text-lg'><span className='font-bold text-gray-500 text-lg me-2'>Category</span>: {Category}</p>
-                        <p className='font-semibold text-lg w-fit'><span className='font-bold text-gray-500 text-lg me-2'>Seller</span>: {seller}</p>
-                    </div>
-                    <div className="card-actions justify-end">
-                        <button onClick={()=>handleToyDetails(_id)} className="btn w-full">View details</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <tr className='text-center'>
+            <td className='font-semibold'>{ToyName}</td>
+            <td className='font-semibold'>{Category}</td>
+            <td className='font-semibold'>{Price} $</td>
+            <td className='font-semibold'>{Quantity}</td>
+            <td className='font-semibold'>{seller}</td>
+            <td className='font-semibold'><button className='btn'>Update</button></td>
+            <td className='font-semibold'><Link to={`/details/${_id}`}><button className='btn'>View Details</button></Link></td>
+        </tr>
     );
 };
 

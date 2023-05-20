@@ -3,7 +3,7 @@ import { AuthContext } from '../../../../Provider/AuthProvider';
 
 const SportCar = ({ car }) => {
 
-    const { _id, category_id, car_img, car_name, price, ratting } = car;
+    const { _id, category_id, car_img, car_name, price, ratting } = car || {};
     
     const {user} = useContext(AuthContext);
     // console.log(user);

@@ -2,7 +2,7 @@ import React from 'react';
 
 const MonsterTruck = ({ car }) => {
 
-    const { _id, category_id, car_img, car_name, price, ratting } = car;
+    const { _id, category_id, car_img, car_name, price, ratting } = car || {};
 
     return (
         <div>
