@@ -7,12 +7,13 @@ const MyToysPage = () => {
     const {user} = useContext(AuthContext)
     const {email} = user;
     const [myToys, setMyToys] = useState([])
+    const [reload, setReload] = useState(false)
 
     useEffect(()=>{
         fetch(`http://localhost:5000/myToys/${email}`)
         .then(res => res.json())
         .then(data => setMyToys(data))
-    },[])
+    },[reload])
 
     return (
         <>
@@ -32,7 +33,7 @@ const MyToysPage = () => {
                     </thead>
                     <tbody>
                         {
-                            myToys.map(toy => <MyToysCollection key={toy._id} toy={toy}></MyToysCollection>)
+                            myToys.map(toy => <MyToysCollection reload={reload} setReload={setReload} key={toy._id} toy={toy}></MyToysCollection>)
                         }
                     </tbody>
                 </table>

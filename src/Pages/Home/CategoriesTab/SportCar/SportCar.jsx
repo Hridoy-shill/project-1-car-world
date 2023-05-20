@@ -14,7 +14,7 @@ const SportCar = ({ car }) => {
             <></>
         }
         else{
-            alert('log in first')
+            alert('You have to log in first to view details')
         }
     }
     
