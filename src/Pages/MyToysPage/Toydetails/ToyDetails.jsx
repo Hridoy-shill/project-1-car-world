@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import useTitle from '../../../Hook/useTitle';
 
 const ToyDetails = () => {
 
     const previewsData = useLoaderData()
+    useTitle('Toy Details')
     const { Price, Quantity, description, _id } = previewsData
     const navigate = useNavigate()
 

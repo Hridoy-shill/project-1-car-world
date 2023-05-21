@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import MyToysCollection from './MyToysCollection/MyToysCollection';
+import useTitle from '../../Hook/useTitle';
 
 const MyToysPage = () => {
     const {user} = useContext(AuthContext)
     const {email} = user;
     const [myToys, setMyToys] = useState([])
     const [reload, setReload] = useState(false)
+    useTitle('My Toy')
 
     useEffect(()=>{
         fetch(`https://car-world-server-henna.vercel.app/myToys/${email}`)
@@ -33,7 +35,7 @@ const MyToysPage = () => {
                     </thead>
                     <tbody>
                         {
-                            myToys.slice(0, 20).map(toy => <MyToysCollection reload={reload} setReload={setReload} key={toy._id} toy={toy}></MyToysCollection>)
+                            myToys?.slice(0, 20).map(toy => <MyToysCollection reload={reload} setReload={setReload} key={toy._id} toy={toy}></MyToysCollection>)
                         }
                     </tbody>
                 </table>

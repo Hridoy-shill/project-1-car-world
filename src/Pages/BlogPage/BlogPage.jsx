@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useTitle from '../../Hook/useTitle';
 
 const BlogPage = () => {
 
-
+    useTitle('Blog')
 
     return (
         <div className='p-12'>

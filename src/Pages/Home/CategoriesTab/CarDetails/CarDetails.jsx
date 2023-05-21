@@ -2,9 +2,11 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FaStar } from 'react-icons/fa';
+import useTitle from '../../../../Hook/useTitle';
 
 const CarDetails = () => {
     const carData = useLoaderData()
+    useTitle('Car Details')
     const { car_img, car_name, price, ratting } = carData || {}
     return (
         <>

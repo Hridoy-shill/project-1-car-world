@@ -2,12 +2,14 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useTitle from '../../Hook/useTitle';
 
 const SingUpPage = () => {
 
     const [error, setError] = useState('')
     const {createUser} = useContext(AuthContext);
     const navigate = useNavigate();
+    useTitle('SingUp')
    
 
     const handleSingUpData = (event) => {

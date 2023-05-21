@@ -2,9 +2,11 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FaStar } from 'react-icons/fa';
+import useTitle from '../../../../Hook/useTitle';
 
 const Details = () => {
     const details = useLoaderData()
+    useTitle('Details')
 
     const { Category, Price, Quantity, ToyName, description, ratting, seller, sellerName, toyImg } = details || {}
 

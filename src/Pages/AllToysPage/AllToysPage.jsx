@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SingleToy from './SingleToy/SingleToy';
+import useTitle from '../../Hook/useTitle';
 
 const AllToysPage = () => {
     const allToys = useLoaderData()
+    useTitle('All Toys')
     console.log(allToys);
     const [toysData, setToyData] = useState(allToys)
 

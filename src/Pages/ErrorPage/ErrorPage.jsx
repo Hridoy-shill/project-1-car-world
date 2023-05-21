@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hook/useTitle';
 
 const ErrorPage = () => {
+    useTitle('Error')
     return (
         <>
             <div className='relative'>

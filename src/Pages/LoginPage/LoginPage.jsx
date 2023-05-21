@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useTitle from '../../Hook/useTitle';
 
 
 
@@ -11,6 +12,7 @@ const LoginPage = () => {
     const [error, setError] = useState('')
     const { logInUser, googleSingUp } = useContext(AuthContext)
     const navigate = useNavigate();
+    useTitle('Login')
     const location = useLocation()
     console.log(location);
     const from = location.state?.from?.pathname || '/'
