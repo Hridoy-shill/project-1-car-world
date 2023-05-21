@@ -4,10 +4,6 @@ import { Link,} from 'react-router-dom';
 
 const SingleToy = ({ toy }) => {
 
-    // const { user } = useContext(AuthContext)
-    // const location = useLocation();
-    // console.log(location);
-
 
     const { _id, Category, Price, Quantity, ToyName, seller } = toy || {};
 
