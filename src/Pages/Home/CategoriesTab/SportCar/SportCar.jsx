@@ -3,6 +3,7 @@ import { AuthContext } from '../../../../Provider/AuthProvider';
 import { Link, useLoaderData } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FaStar } from 'react-icons/fa';
+import Swal from 'sweetalert2'
 
 const SportCar = ({ car }) => {
 

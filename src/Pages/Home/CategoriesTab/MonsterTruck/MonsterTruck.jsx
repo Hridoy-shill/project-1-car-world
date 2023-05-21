@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FaStar } from 'react-icons/fa';
+import Swal from 'sweetalert2'
+import { AuthContext } from '../../../../Provider/AuthProvider';
 
 const MonsterTruck = ({ car }) => {
 
     const { _id, category_id, car_img, car_name, price, ratting } = car || {};
+    const { user } = useContext(AuthContext);
+
+    const handleUserExist = () => {
+        if (user) {
+            <></>
+        }
+        else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You have to log in first to view details',
+              })
+        }
+    }
 
     return (
         <div data-aos="zoom-in">
@@ -28,7 +44,7 @@ const MonsterTruck = ({ car }) => {
                         </p>
                     </div>
                     <div className="card-actions justify-end">
-                        <Link to={`/carDetails/${_id}`}><button className="btn w-full">View details</button></Link>
+                        <Link to={`/carDetails/${_id}`}><button onClick={handleUserExist} className="btn w-full">View details</button></Link>
                     </div>
                 </div>
             </div>
