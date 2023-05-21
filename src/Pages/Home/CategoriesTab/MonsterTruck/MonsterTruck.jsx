@@ -8,8 +8,8 @@ const MonsterTruck = ({ car }) => {
     const { _id, category_id, car_img, car_name, price, ratting } = car || {};
 
     return (
-        <div>
-            <div className="card w-fit h-fit bg-base-100 shadow-xl border-2 border-gray-100">
+        <div data-aos="zoom-in">
+            <div className="card w-fit h-fit bg-base-100 shadow-xl border-2 border-gray-100" >
                 <figure><img src={car_img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <p className="font-bold text-2xl">{car_name}</p>

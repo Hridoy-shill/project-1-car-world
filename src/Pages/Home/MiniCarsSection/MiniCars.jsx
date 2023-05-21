@@ -2,7 +2,8 @@ import React from 'react';
 
 const MiniCars = () => {
     return (
-        <div className='my-14'>
+        <div className='my-14' data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
             <h1 className='text-3xl font-bold mx-auto border-b-2 border-black pb-2 w-fit mb-5'>Our Mini Car's</h1>
 
             <div className='grid lg:grid-cols-4 gap-3 p-5'>

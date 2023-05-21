@@ -2,7 +2,8 @@ import React from 'react';
 
 const Gallery = () => {
     return (
-        <div className='mb-10 p-10'>
+        <div className='mb-10 p-10' data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
             <h1 className='text-3xl font-bold mx-auto border-b-2 border-black pb-2 w-fit'>Car's Gallery</h1>
 
             <div className='grid lg:grid-cols-3 border-2 lg:mt-5 mt-4 lg:mx-10 gap-3 lg:p-10 hover:bg-gray-200 hover:border-black hover:rounded-lg duration-700'>

@@ -20,7 +20,7 @@ const SportCar = ({ car }) => {
 
 
     return (
-        <div className="card w-fit bg-base-100 shadow-xl border-2 border-gray-100">
+        <div className="card w-fit bg-base-100 shadow-xl border-2 border-gray-100" data-aos="zoom-in">
             <figure><img src={car_img} alt="Shoes" /></figure>
             <div className="card-body">
                 <p className="font-bold text-3xl">{car_name}</p>
