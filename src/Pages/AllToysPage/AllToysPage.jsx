@@ -13,10 +13,12 @@ const AllToysPage = () => {
         console.log(searchText);
 
         useEffect(() => {
-            fetch(`https://car-world-server-henna.vercel.app/${searchText}`)
+            fetch(`https://car-world-server-henna.vercel.app?q=${searchText}`, {
+                
+            })
             .then(res => res.json())
             .then(data =>console.log(data))
-        }, [])
+        }, []) 
 
     }
 
