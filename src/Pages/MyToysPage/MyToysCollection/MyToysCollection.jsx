@@ -12,6 +12,7 @@ const MyToysCollection = ({ toy, setReload, reload }) => {
         })
             .then(res => res.json())
             .then(data => {
+                confirm('ar you delete')
                 setReload(!reload)
             })
     }
