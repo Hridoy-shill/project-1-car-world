@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Rating from 'react-rating';
+import { FaStar } from 'react-icons/fa';
 
 const MonsterTruck = ({ car }) => {
 
@@ -13,7 +15,17 @@ const MonsterTruck = ({ car }) => {
                     <p className="font-bold text-2xl">{car_name}</p>
                     <div className='my-2'>
                         <p className='font-semibold text-lg'>Price: {price}$</p>
-                        <p className='font-semibold text-lg'>ratting:{ratting}</p>
+                        <p className='font-semibold text-lg'>ratting:
+                            <Rating
+                                className='ms-2'
+                                initialRating={ratting}
+                                placeholderRating={<FaStar></FaStar>}
+                                readonly
+                                emptySymbol={<FaStar className='text-gray-500'></FaStar>}
+                                placeholderSymbol={<FaStar></FaStar>}
+                                fullSymbol={<FaStar className='text-orange-400'></FaStar>}>
+                            </Rating>
+                        </p>
                     </div>
                     <div className="card-actions justify-end">
                         <Link to={`/carDetails/${_id}`}><button className="btn w-full">View details</button></Link>

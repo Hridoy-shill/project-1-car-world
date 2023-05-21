@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import Rating from 'react-rating';
+import { FaStar } from 'react-icons/fa';
 
 const Details = () => {
     const details = useLoaderData()
@@ -22,7 +24,15 @@ const Details = () => {
                         <p className='font-semibold text-lg my-4'><span className='font-bold text-xl me-1'>Seller:</span> {sellerName}</p>
                         <p className='font-semibold text-lg my-4'><span className='font-bold text-xl me-1'>Seller Email:</span> {seller}</p>
                         <p className='font-semibold text-lg my-4'><span className='font-bold text-xl me-1'>Price:</span> {Price} $</p>
-                        <p className='font-semibold text-lg my-4'><span className='font-bold text-xl me-1'>Ratting:</span> {ratting}</p>
+                        <p className='font-semibold text-lg my-4'><span className='font-bold text-xl me-1'>Ratting:</span><Rating
+                                className='ms-2'
+                                initialRating={ratting}
+                                placeholderRating={<FaStar></FaStar>}
+                                readonly
+                                emptySymbol={<FaStar className='text-gray-500'></FaStar>}
+                                placeholderSymbol={<FaStar></FaStar>}
+                                fullSymbol={<FaStar className='text-orange-400'></FaStar>}>
+                            </Rating></p>
                         <p className='font-semibold text-lg my-4'><span className='font-bold text-xl me-1'>Available Quantity:</span> {Quantity}</p>
                         <button className="btn mt-10 w-1/2">Buy Now</button>
                     </div>
