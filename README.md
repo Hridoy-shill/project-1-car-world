@@ -1,9 +1,22 @@
+# Car World
 
-# JOB Bazar.com  
-A Job hunting single page website with react router dom.
-## Live site
-1. live site https://starlit-gumdrop-d85763.netlify.app
-## Used tools
-1. natlifiy
-2. react toastify
-3. Hero icons...etc.
+A single page website based on Toy car's.
+
+## Live site link
+https://car-world-77c5e.web.app/
+
+
+## Technology
+- react router DOM
+- MongoDB
+- firebase
+- daisyUi
+- tailwind etc....
+
+## About Webpage
+
+- It a Toy car based website.
+- This is a e-ecommerce type website.there have many category's of toy car's.
+- In this website user's can order toy's from home.
+- also admin can add toy's with there own account.
+- In this website admin can update and delete his/her added toy's.
