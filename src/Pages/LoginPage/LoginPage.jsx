@@ -2,9 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import useTitle from '../../Hook/useTitle';
-
-
-
+import Swal from 'sweetalert2'
 
 
 const LoginPage = () => {
@@ -28,9 +26,12 @@ const LoginPage = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
-                alert("Login Successful");
+                Swal.fire({
+                    icon: 'success',
+                    text: 'LogIn successful',
+                })
                 form.reset();
-                navigate(from, {replace: true})
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message);
@@ -39,15 +40,15 @@ const LoginPage = () => {
     }
     const handleGoogleLogIn = () => {
         googleSingUp()
-        .then(result =>{
-            const newUserByGoogle = result.user;
-            navigate(from, {replace: true})
-            alert('Login Successful')
-            console.log(newUserByGoogle);
-        })
-        .catch(error =>{
-            console.log(error);
-        })
+            .then(result => {
+                const newUserByGoogle = result.user;
+                navigate(from, { replace: true })
+                alert('Login Successful')
+                console.log(newUserByGoogle);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -58,11 +59,11 @@ const LoginPage = () => {
             <form onSubmit={handleLogInData} className='w-1/2 p-8 mx-auto border-2 border-gray-400 rounded-md bg-slate-200'>
                 <div className='flex flex-col'>
                     <label className='font-bold text-xl' htmlFor="email">Email:</label>
-                    <input className='w-full border-2 p-3 rounded border-gray-600 mt-4' type="email" name="email" id="" placeholder='Enter your email' required/>
+                    <input className='w-full border-2 p-3 rounded border-gray-600 mt-4' type="email" name="email" id="" placeholder='Enter your email' required />
                 </div>
                 <div className='flex flex-col'>
                     <label className='font-bold text-xl' htmlFor="password">Password:</label>
-                    <input className='w-full border-2 p-3 rounded border-gray-600 mt-4' type="password" name="password" id="" placeholder='Enter your password' required/>
+                    <input className='w-full border-2 p-3 rounded border-gray-600 mt-4' type="password" name="password" id="" placeholder='Enter your password' required />
                 </div>
                 <div>
                     <p className='text-red-600 font-bold text-base mt-3'>{error}</p>
