@@ -25,7 +25,7 @@ const AddToyPage = () => {
         console.log(toyData);
 
 
-        fetch('http://localhost:5000/addToy', {
+        fetch('https://car-world-server-henna.vercel.app/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

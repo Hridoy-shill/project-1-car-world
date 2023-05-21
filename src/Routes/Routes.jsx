@@ -26,12 +26,12 @@ const router = createBrowserRouter([
       {
         path:'/carDetails/:id',
         element:<PrivateRoute><CarDetails></CarDetails></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/allCars/${params.id}`)
+        loader:({params})=>fetch(`https://car-world-server-henna.vercel.app/allCars/${params.id}`)
       },
       {
         path: '/allToys',
         element: <AllToysPage></AllToysPage>,
-        loader: () => fetch('http://localhost:5000/allToy')
+        loader: () => fetch('https://car-world-server-henna.vercel.app/allToy')
       },
       {
         path: '/addToys',
@@ -44,12 +44,12 @@ const router = createBrowserRouter([
       {
         path: '/ToyDetails/:id',
         element: <ToyDetails></ToyDetails>,
-        loader:({params})=>fetch(`http://localhost:5000/ToyDetails/${params.id}`)
+        loader:({params})=>fetch(`https://car-world-server-henna.vercel.app/ToyDetails/${params.id}`)
       },
       {
         path:'/details/:id',
         element:<PrivateRoute><Details></Details></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/allToy/${params.id}`)
+        loader:({params})=>fetch(`https://car-world-server-henna.vercel.app/allToy/${params.id}`)
       },
       {
         path: '/blog',

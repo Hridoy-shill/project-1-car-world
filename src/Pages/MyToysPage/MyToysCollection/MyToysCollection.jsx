@@ -8,7 +8,7 @@ const MyToysCollection = ({ toy, setReload, reload }) => {
 
     const handleDeleteToy = (id) => {
 
-        fetch(`http://localhost:5000/deleteToy/${id}`, {
+        fetch(`https://car-world-server-henna.vercel.app/deleteToy/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

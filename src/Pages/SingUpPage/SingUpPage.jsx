@@ -18,7 +18,7 @@ const SingUpPage = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(name,photo, email, password);
+  
 
         createUser(email, password)
         .then(result =>{
@@ -29,7 +29,6 @@ const SingUpPage = () => {
                 photoURL: photo
             })
 
-            // console.log(createdUser);
             form.reset();
             navigate('/')
         })

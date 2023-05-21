@@ -5,8 +5,8 @@ const Gallery = () => {
         <div className='mb-10 p-10'>
             <h1 className='text-3xl font-bold mx-auto border-b-2 border-black pb-2 w-fit'>Car's Gallery</h1>
 
-            <div className='grid lg:grid-cols-3 border-2 lg:mt-5 mx-10 gap-3 lg:p-10 hover:bg-gray-200 hover:border-black hover:rounded-lg duration-700'>
-                <div className='w-80 transition ease-in-out delay-150 hover:-translate-y-2 border-2 hover:border-black rounded-lg duration-500'>
+            <div className='grid lg:grid-cols-3 border-2 lg:mt-5 mt-4 lg:mx-10 gap-3 lg:p-10 hover:bg-gray-200 hover:border-black hover:rounded-lg duration-700'>
+                <div className='lg:w-80 transition ease-in-out delay-150 hover:-translate-y-2 border-2 hover:border-black rounded-lg duration-500'>
                     <img className='rounded-lg hover:shadow-lg' src="https://i.ibb.co/mShxFBg/car2.jpg" alt="" />
                 </div>
                 <div className='w-80 transition ease-in-out delay-150 hover:-translate-y-2 border-2 hover:border-black rounded-lg duration-500'>

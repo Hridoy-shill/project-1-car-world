@@ -19,7 +19,7 @@ const ToyDetails = () => {
         // console.log(updateData);
 
 
-       fetch(`http://localhost:5000/updateToy/${_id}`, {
+       fetch(`https://car-world-server-henna.vercel.app/updateToy/${_id}`, {
 
         method: "PUT",
         headers:{

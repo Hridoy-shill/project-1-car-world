@@ -10,7 +10,7 @@ const MyToysPage = () => {
     const [reload, setReload] = useState(false)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/myToys/${email}`)
+        fetch(`https://car-world-server-henna.vercel.app/myToys/${email}`)
         .then(res => res.json())
         .then(data => setMyToys(data))
     },[reload])

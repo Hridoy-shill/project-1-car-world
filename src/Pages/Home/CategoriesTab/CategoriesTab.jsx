@@ -13,7 +13,7 @@ const CategoriesTab = () => {
     // console.log(carCategory);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allCars')
+        fetch('https://car-world-server-henna.vercel.app/allCars')
             .then(res => res.json())
             .then(data => setAllCars(data))
     }, [])
