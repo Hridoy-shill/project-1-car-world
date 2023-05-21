@@ -33,7 +33,7 @@ const MyToysPage = () => {
                     </thead>
                     <tbody>
                         {
-                            myToys.map(toy => <MyToysCollection reload={reload} setReload={setReload} key={toy._id} toy={toy}></MyToysCollection>)
+                            myToys.slice(0, 20).map(toy => <MyToysCollection reload={reload} setReload={setReload} key={toy._id} toy={toy}></MyToysCollection>)
                         }
                     </tbody>
                 </table>

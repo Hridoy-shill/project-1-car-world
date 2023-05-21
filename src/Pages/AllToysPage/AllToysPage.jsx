@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SingleToy from './SingleToy/SingleToy';
 
 const AllToysPage = () => {
     const allToys = useLoaderData()
     console.log(allToys);
+    const [toysData, setToyData] = useState(allToys)
 
     const handleSearch = event => {
         event.preventDefault()
@@ -12,13 +13,9 @@ const AllToysPage = () => {
         const searchText = form.search.value;
         console.log(searchText);
 
-        useEffect(() => {
-            fetch(`https://car-world-server-henna.vercel.app?q=${searchText}`, {
-                
-            })
+        fetch(`https://car-world-server-henna.vercel.app/searchToy/${searchText}`)
             .then(res => res.json())
-            .then(data =>console.log(data))
-        }, []) 
+            .then(data => setToyData(data))
 
     }
 
@@ -49,7 +46,7 @@ const AllToysPage = () => {
                     </thead>
                     <tbody>
                         {
-                            allToys.slice(0, 20).map(toy => <SingleToy key={toy._id} toy={toy}></SingleToy>)
+                            toysData?.map(toy => <SingleToy key={toy._id} toy={toy}></SingleToy>)
                         }
                     </tbody>
                 </table>
