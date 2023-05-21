@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const AddToyPage = () => {
 
-    const {user} = useContext(AuthContext);
-    const {displayName, email} = user;
+    const { user } = useContext(AuthContext);
+    const { displayName, email } = user;
 
     const handleAddToyData = (event) => {
         event.preventDefault()
@@ -18,9 +19,9 @@ const AddToyPage = () => {
         const ratting = form.ratting.value;
         const description = form.description.value;
         const toyImg = form.toyImg.value;
-    
 
-        const toyData = { ToyName, Category, Price, Quantity, seller, toyImg, sellerName, ratting, description}
+
+        const toyData = { ToyName, Category, Price, Quantity, seller, toyImg, sellerName, ratting, description }
         console.log(toyData);
 
 
@@ -33,7 +34,11 @@ const AddToyPage = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-            form.reset()
+        Swal.fire({
+            icon: 'success',
+            title: 'Added Successful',
+        })
+        form.reset()
     }
 
     return (

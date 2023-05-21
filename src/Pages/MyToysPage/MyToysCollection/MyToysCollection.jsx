@@ -1,18 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const MyToysCollection = ({ toy, setReload, reload }) => {
     // console.log(toy);
     const { _id, Category, Price, Quantity, ToyName, seller } = toy
 
     const handleDeleteToy = (id) => {
-        
+
         fetch(`http://localhost:5000/deleteToy/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
             .then(data => {
-                confirm('ar you delete')
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3D4451',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
                 setReload(!reload)
             })
     }
