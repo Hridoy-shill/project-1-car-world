@@ -14,7 +14,11 @@ const SportCar = ({ car }) => {
             <></>
         }
         else {
-            alert('You have to log in first to view details')
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You have to log in first to view details',
+              })
         }
     }
 
